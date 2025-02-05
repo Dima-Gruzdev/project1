@@ -4,17 +4,17 @@ from datetime import datetime
 def mask_account_card(mask_number_card: str) -> str:
     """Фунцкция которая принимает счет и номер карты и возвращает зашифрованный"""
     mask_card_split = mask_number_card.split()
-    mask_card_isalpha = []
-    mask_card_isdigit = []
+    card_isalpha = []
+    card_isdigit = []
     if "Счет" in mask_card_split:
         return f"Счет **{mask_number_card[-4:]}"
     for i in mask_card_split:
         if i.isalpha():
-            mask_card_isalpha.append(i)
+            card_isalpha.append(i)
         elif i.isdigit():
-            mask_card_isdigit.append(i)
-    card_isdigit_join: str = ''.join(mask_card_isdigit)
-    return f"{' '.join(mask_card_isalpha)} {card_isdigit_join[:4]} {card_isdigit_join[4:6]}** **** {card_isdigit_join[-4:]}"
+            card_isdigit.append(i)
+    card_join: str = ''.join(card_isdigit)
+    return f"{' '.join(card_isalpha)} {card_join[:4]} {card_join[4:6]}** **** {card_join[-4:]}"
 
 
 print(mask_account_card("Maestro 7000792289606361"))
