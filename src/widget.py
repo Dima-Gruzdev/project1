@@ -13,7 +13,7 @@ def mask_account_card(mask_number_card: str) -> str:
             card_isalpha.append(i)
         elif i.isdigit():
             card_isdigit.append(i)
-    card_join: str = ''.join(card_isdigit)
+    card_join: str = "".join(card_isdigit)
     return f"{' '.join(card_isalpha)} {card_join[:4]} {card_join[4:6]}** **** {card_join[-4:]}"
 
 
