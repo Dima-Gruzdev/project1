@@ -1,4 +1,6 @@
 from datetime import datetime
+from src.masks import get_mask_account
+from src.masks import get_mask_card_number
 
 
 def mask_account_card(mask_number_card: str) -> str:
@@ -7,17 +9,18 @@ def mask_account_card(mask_number_card: str) -> str:
     card_isalpha = []
     card_isdigit = []
     if "Счет" in mask_card_split:
-        return f"Счет **{mask_number_card[-4:]}"
+        return f"Счет {get_mask_account(mask_number_card)}"
     for i in mask_card_split:
         if i.isalpha():
             card_isalpha.append(i)
         elif i.isdigit():
             card_isdigit.append(i)
     card_join: str = "".join(card_isdigit)
-    return f"{' '.join(card_isalpha)} {card_join[:4]} {card_join[4:6]}** **** {card_join[-4:]}"
+    return f"{' '.join(card_isalpha)} {get_mask_card_number(card_join)}"
 
 
 print(mask_account_card("Maestro 7000792289606361"))
+print(mask_account_card("Счет 70007922896051826361"))
 
 
 def get_date(edited_date: str) -> str:
