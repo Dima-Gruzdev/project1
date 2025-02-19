@@ -5,8 +5,12 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(mask_account: str) -> str:
     """Функция которая принимает номер счета и возращает зашифрованный номер и 4 последние цифры"""
+    if mask_account == "":
+        return "Пустая строка"
+    elif len(mask_account) > 20 or len(mask_account) < 20:
+        return "Неверная длина счета"
     return f"**{mask_account[-4:]}"
 
 
+print(get_mask_account("52523623584258622626"))
 print(get_mask_card_number("7005007857712585"))
-print(get_mask_account("51298752159625475835"))
