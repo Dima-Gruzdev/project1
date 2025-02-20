@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import mask_account_card
+from src.widget import mask_account_card, get_date
 from tests.conftest import unacceptable
 
 
@@ -18,3 +18,12 @@ def test_mask_account_unaccep(unacceptable):
 ])
 def test_mask_account_card(value, expected):
     assert mask_account_card(value) == expected
+
+
+@pytest.mark.parametrize("date, trans_date", [
+    ("2024-03-11T02:26:18.671407", "11.03.2024"),
+    ("", "Дата отсутствует"),
+    ("2024/03/11T02/26/18/671407", "Введите дату в правильном формате"),
+])
+def test_get_date(date, trans_date):
+    assert get_date(date) == trans_date

@@ -29,8 +29,12 @@ print(mask_account_card("Счет 7000792229651826361"))
 def get_date(edited_date: str) -> str:
     """Функция которая принимает дату ввиде 2024-03-11T02:26:18.671407 и возращает в формате
     ДД.ММ.Г"""
-    date_obj = datetime.strptime(edited_date, "%Y-%m-%dT%H:%M:%S.%f")
-    return date_obj.strftime("%d.%m.%Y")
-
+    if len(edited_date) == 0:
+        return "Дата отсутствует"
+    try:
+        date_obj = datetime.strptime(edited_date, "%Y-%m-%dT%H:%M:%S.%f")
+        return date_obj.strftime("%d.%m.%Y")
+    except ValueError:
+        return 'Введите дату в правильном формате'
 
 print(get_date("2024-03-11T02:26:18.671407"))
