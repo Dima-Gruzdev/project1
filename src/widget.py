@@ -10,6 +10,9 @@ def mask_account_card(mask_number_card: str) -> str:
     card_isdigit = []
     if "Счет" in mask_card_split:
         return f"Счет {get_mask_account(mask_number_card)}"
+    for item in mask_number_card:
+        if item == "!" or item == "," or item == ".":
+            return "Недопустимые символы"
     for i in mask_card_split:
         if i.isalpha():
             card_isalpha.append(i)
@@ -19,8 +22,8 @@ def mask_account_card(mask_number_card: str) -> str:
     return f"{' '.join(card_isalpha)} {get_mask_card_number(card_join)}"
 
 
-print(mask_account_card("Maestro 7000792289606361"))
-print(mask_account_card("Счет 70007922896051826361"))
+print(mask_account_card("Maestro 7000792289606362"))
+print(mask_account_card("Счет 7000792229651826361"))
 
 
 def get_date(edited_date: str) -> str:

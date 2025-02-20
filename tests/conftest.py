@@ -13,3 +13,7 @@ def  empty_string():
 @pytest.fixture
 def len_string():
     return "Неверная длина счета"
+
+@pytest.fixture
+def unacceptable():
+    return "Недопустимые символы"

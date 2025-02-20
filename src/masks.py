@@ -1,6 +1,6 @@
 def get_mask_card_number(card_number: str) -> str:
     """Функция которая на вход принимает номер карты а возращает на половину зашифрованный"""
-    if card_number == "":
+    if len(card_number) == 0:
         return "Пустая строка"
     elif len(card_number) > 16 or len(card_number) < 16:
         return "Неверное количество цифр"
@@ -9,7 +9,7 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(mask_account: str) -> str:
     """Функция которая принимает номер счета и возращает зашифрованный номер и 4 последние цифры"""
-    if mask_account == "":
+    if len(mask_account) == 0:
         return "Пустая строка"
     elif len(mask_account) < 20:
         return "Неверная длина счета"
