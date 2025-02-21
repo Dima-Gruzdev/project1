@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-def filter_by_state(filter_list: list[dict], state: str = "EXECUTED") -> list[dict]:
+def filter_by_state(filter_list: list[dict], state: str = "EXECUTED") -> str | list[dict]:
     """Функция которая принимает на вход  список словарей и возращает новый отсортированный по ключу state"""
     new_list_filter = []
     for i in filter_list:
