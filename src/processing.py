@@ -29,4 +29,5 @@ def sort_by_date(sort_by_list: list[dict], rev: bool = True) -> list[dict] | str
     except ValueError:
         return "Неверный формат даты"
 
+
 print(sort_by_date([]))

@@ -37,4 +37,5 @@ def get_date(edited_date: str) -> str:
     except ValueError:
         return 'Введите дату в правильном формате'
 
+
 print(get_date("2024-03-11T02:26:18.671407"))

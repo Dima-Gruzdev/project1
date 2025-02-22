@@ -1,7 +1,6 @@
 import pytest
 
 from src.widget import mask_account_card, get_date
-from tests.conftest import unacceptable
 
 
 def test_mask_account_empty(empty_string):
@@ -9,7 +8,7 @@ def test_mask_account_empty(empty_string):
 
 
 def test_mask_account_unaccep(unacceptable):
-    assert  mask_account_card("Maestro 700079228960636!") == unacceptable
+    assert mask_account_card("Maestro 700079228960636!") == unacceptable
 
 
 @pytest.mark.parametrize("value, expected", [
