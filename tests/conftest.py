@@ -48,3 +48,11 @@ def sort_ex():
 @pytest.fixture
 def sort_empty():
     return []
+
+
+@pytest.fixture
+def trans_descr():
+    return [
+        {"id": 1, "description": "Перевод организации"},
+        {"id": 2, "description": "Перевод с карты на счет"},
+    ]
