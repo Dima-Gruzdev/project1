@@ -5,11 +5,6 @@ from src.tranzit import transactions
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterable[dict]:
     """Функция которая  фильтрует транзакции по определенной валюте"""
     return (x for x in transactions if x["operationAmount"]["currency"]["code"] == currency)
-    # for transaction in transactions:
-    #     if transaction["operationAmount"]["currency"]["code"] == currency:
-    #         yield transaction
-
-
 
 
 def transaction_descriptions(transactions: list[dict]) -> Iterable[str]:
@@ -17,13 +12,6 @@ def transaction_descriptions(transactions: list[dict]) -> Iterable[str]:
     for trans in transactions:
         if "description" in trans:
             yield trans["description"]
-    while True:
-        yield "Нет данных"
-
-
-descriptions = transaction_descriptions(transactions)
-for _ in range(2):
-    print(next(descriptions))
 
 
 def card_number_generator(start, stop):
@@ -33,18 +21,13 @@ def card_number_generator(start, stop):
         yield (f"{str(number).zfill(16)[:4]} {str(number).zfill(16)[4:8]} "
                f"{str(number).zfill(16)[8:12]} {str(number).zfill(16)[12:]}")
 
+
 if __name__ == "__main__":
-
-
-    for card_number in card_number_generator(1, 5):
-        print(card_number)
-
-
     usd_transactions = filter_by_currency(transactions, "USD")
     for _ in range(2):
         print(next(usd_transactions))
-
-
+    for card_number in card_number_generator(9999999999999995, 9999999999999999):
+        print(card_number)
     descriptions = transaction_descriptions(transactions)
     for _ in range(2):
         print(next(descriptions))
