@@ -1,0 +1,6 @@
+
+my_function ok
+my_function error: unsupported operand type(s) for +: 'int' and 'NoneType'. Inputs: (0, None), {}
+my_function ok
+my_function ok
+my_function error: can only concatenate str (not "int") to str. Inputs: ('2', 2), {}
