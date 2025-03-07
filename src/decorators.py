@@ -29,8 +29,9 @@ def log(filename: Optional[any]) -> Optional[any]:
 
 @log(filename="mylog.txt")
 def my_function(x, y):
+    """Функция складывает 2 числа для проверки"""
     return x + y
 
 
 if __name__ == "__main__":
-    print(my_function("2",2))
+    print(my_function(1, 5))
