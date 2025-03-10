@@ -1,0 +1,9 @@
+
+my_function error: can only concatenate str (not "int") to str. Inputs: (), {'x': '', 'y': 2}
+my_function error: my_function() missing 1 required positional argument: 'y'. Inputs: (2,), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'f'), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'f'), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'f'), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: my_function() missing 2 required positional arguments: 'x' and 'y'. Inputs: (), {}
+my_function error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (1, 'f'), {}
