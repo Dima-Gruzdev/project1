@@ -1,7 +1,6 @@
 import json
 
 
-
 def transactions_finance(path:str) -> any:
     """Функция которая с json файла возращает список словарей с данными о финансовых транзакциях"""
     try:
@@ -14,5 +13,3 @@ def transactions_finance(path:str) -> any:
 
 if __name__ == '__main__':
     print(transactions_finance('../data/operations.json'))
-
-
