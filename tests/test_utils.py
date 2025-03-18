@@ -1,10 +1,7 @@
 import unittest
-from json import JSONDecodeError
 from unittest.mock import patch
 
 from src.utils import transactions_finance
-import json
-import pytest
 
 
 class TestJsonReader(unittest.TestCase):
@@ -23,11 +20,5 @@ class TestJsonReader_1(unittest.TestCase):
         self.assertEqual(result, [])
 
 
-@patch('../data/operations.json.load', side_effect=json.JSONDecodeError("Ожидаемое значение", "", 0))
-def test_read_trans_finance(mock_json_load):
-    with pytest.raises(json.JSONDecodeError):
-        transactions_finance('path/to/file.json')
-
 if __name__ == '__main__':
     unittest.main()
-

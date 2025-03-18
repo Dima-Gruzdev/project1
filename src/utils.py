@@ -1,7 +1,7 @@
 import json
 
 
-def transactions_finance(path:str) -> any:
+def transactions_finance(path: str) -> any:
     """Функция которая с json файла возращает список словарей с данными о финансовых транзакциях"""
     try:
         with open(path, "r", encoding="utf-8") as f:
