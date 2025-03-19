@@ -9,6 +9,7 @@ file_handler.setFormatter(file_formater)
 logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
 
+
 def transactions_finance(path: str) -> any:
     """Функция которая с json файла возращает список словарей с данными о финансовых транзакциях"""
     try:
