@@ -1,4 +1,5 @@
 import pytest
+from blib2to3.pygram import python_symbols
 
 
 @pytest.fixture
