@@ -1,5 +1,6 @@
 from src.transactions_counter import counter_transaction
 
+
 def test_count_transactions_by_category():
     transactions = [
         {"id": 1, "description": "Оплата за услуги", "amount": 100},
@@ -19,5 +20,13 @@ def test_count_transactions_by_category():
         "Оплата за интернет": 1,
         "Неправильная категория": 0,
     }
+    result = counter_transaction(transactions, categories)
+    assert result == expected_result
+
+
+def test_empty_trans_count():
+    transactions = []
+    categories = []
+    expected_result = {}
     result = counter_transaction(transactions, categories)
     assert result == expected_result
