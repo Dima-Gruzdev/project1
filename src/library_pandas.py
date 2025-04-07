@@ -1,6 +1,8 @@
 import csv
 import pandas as pd
 
+from config import TRANSACTION_PATH_EXCEL, TRANSACTION_PATH_CSV
+
 
 def reading_transactions_csv(path: str) -> list[dict]:
     """ Функция чтение CSV файла транзакции"""
@@ -23,5 +25,5 @@ def reading_transactions_excel(filename: str) -> list[dict]:
 
 
 if __name__ == "__main__":
-    print(reading_transactions_csv('../data/transactions.csv'))
-    print(reading_transactions_excel('../data/transactions_excel.xlsx'))
+    print(reading_transactions_csv(TRANSACTION_PATH_CSV))
+    print(reading_transactions_excel(TRANSACTION_PATH_EXCEL))

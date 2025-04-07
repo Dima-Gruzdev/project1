@@ -1,6 +1,5 @@
 import pytest
 
-
 @pytest.fixture
 def mask_string():
     return "**2626"

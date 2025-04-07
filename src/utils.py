@@ -1,6 +1,7 @@
 import json
 import logging
 
+from config import TRANSACTION_PATH_JSON
 
 logger = logging.getLogger("utils.py")
 file_handler = logging.FileHandler('utils.log', 'w', encoding="utf8")
@@ -23,4 +24,4 @@ def transactions_finance(path: str) -> any:
 
 
 if __name__ == '__main__':
-    print(transactions_finance('../data/operations.json'))
+    print(transactions_finance(TRANSACTION_PATH_JSON))
